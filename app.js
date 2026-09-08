@@ -11,26 +11,30 @@ app.controller("Gamecontroller",function($scope){
 
     // array of games and each game is object
     // with name, genre, status, rating
-    $scope.games=[
-        // {
-        //     name: "withcher 3",
-        //     genre: "RPG",
-        //     status: "playing",
-        //     rating: 10
-        // },
-        // {
-        //     name: "Sifu",
-        //     genre: "martial arts combat",
-        //     status: "completed",
-        //     rating: 9
-        // },
-        // {
-        //     name: "GTA 6",
-        //     genre: "action-adventure",
-        //     status: "wishlist",
-        //     rating: 10
-        // }
-    ];
+    // $scope.games=[
+
+    //     // {
+    //     //     name: "withcher 3",
+    //     //     genre: "RPG",
+    //     //     status: "playing",
+    //     //     rating: 10
+    //     // },
+    //     // {
+    //     //     name: "Sifu",
+    //     //     genre: "martial arts combat",
+    //     //     status: "completed",
+    //     //     rating: 9
+    //     // },
+    //     // {
+    //     //     name: "GTA 6",
+    //     //     genre: "action-adventure",
+    //     //     status: "wishlist",
+    //     //     rating: 10
+    //     // }
+    // ];
+
+    // create local storage
+    $scope.games = JSON.parse(localStorage.getItem("games")) || [];
 
     // function to add game
     $scope.addGame = function(){
@@ -40,18 +44,26 @@ app.controller("Gamecontroller",function($scope){
         status: $scope.newGame.status,
         rating: $scope.newGame.rating
     });
+    // convert it into string
+    // save updated games
+    localStorage.setItem("games", angular.toJson($scope.games));
     $scope.newGame = {};
     };
     // function to delete game of that index
     $scope.deleteGame = function(index) {
         // remove 1 element from given index
     $scope.games.splice(index, 1);
+    // save updated games
+    localStorage.setItem("games", angular.toJson($scope.games));
     };
 
     $scope.editGame = function(game){
+        
         $scope.editingGame = game;
     };
     $scope.saveGame = function(){
+        // save edited game
+        localStorage.setItem("games", angular.toJson($scope.games));
         $scope.editingGame = null;
     };
     $scope.cancelEdit = function(){
