@@ -58,6 +58,9 @@
             <p>Genre: {{game.genre}}</p>
             <p>Status: {{game.status}}</p>
             <p>⭐ : {{game.rating}}</p>
+
+            <!-- ng-repeat gives $index to each game-->
+            <button ng-click="deleteGame($index)">Delete</button>
             </div>
         </div>
         <script src="app.js"></script>

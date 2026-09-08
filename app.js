@@ -12,26 +12,27 @@ app.controller("Gamecontroller",function($scope){
     // array of games and each game is object
     // with name, genre, status, rating
     $scope.games=[
-        {
-            name: "withcher 3",
-            genre: "RPG",
-            status: "playing",
-            rating: 10
-        },
-        {
-            name: "Sifu",
-            genre: "martial arts combat",
-            status: "completed",
-            rating: 9
-        },
-        {
-            name: "GTA 6",
-            genre: "action-adventure",
-            status: "wishlist",
-            rating: 10
-        }
+        // {
+        //     name: "withcher 3",
+        //     genre: "RPG",
+        //     status: "playing",
+        //     rating: 10
+        // },
+        // {
+        //     name: "Sifu",
+        //     genre: "martial arts combat",
+        //     status: "completed",
+        //     rating: 9
+        // },
+        // {
+        //     name: "GTA 6",
+        //     genre: "action-adventure",
+        //     status: "wishlist",
+        //     rating: 10
+        // }
     ];
 
+    // function to add game
     $scope.addGame = function(){
     $scope.games.push({
         name: $scope.newGame.name,
@@ -40,5 +41,11 @@ app.controller("Gamecontroller",function($scope){
         rating: $scope.newGame.rating
     });
     $scope.newGame = {};
+
+    // function to delete game of that index
+    $scope.deleteGame = function(index) {
+        // remove 1 element from given index
+    $scope.games.splice(index, 1);
+};
 }
 });
