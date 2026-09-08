@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- 
+    ng-agg is angularJS directive
+    angularJS application starts from here
+-->
+<html ng-app="gameApp">
+
+    <head>
+        <title>GameVault</title>
+        <!-- angularJS framework which loads in browser-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <!--
+        controller is a JS function that controls data and behaviour of a
+        particular part of an angularJS application
+        -> it handles logic of application
+    -->
+    <body ng-controller="Gamecontroller">
+        <h1>GameVault</h1>
+        <h2>{{message}}</h2>
+        <script src="app.js"></script>
+    </body>
+</html>
