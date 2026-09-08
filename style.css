@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #f8fafc;
+    min-height: 100vh;
+    padding: 40px;
+}
+
+/* Main heading */
+h1 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 35px;
+}
+
+/* Add game section */
+.add-game {
+    max-width: 1000px;
+    margin: auto;
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+input,
+select {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #334155;
+    color: white;
+    outline: none;
+}
+
+.add-game input {
+    flex: 1;
+}
+
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Add button */
+.add-game button {
+    background: #22c55e;
+    color: white;
+}
+
+.add-game button:hover {
+    background: #16a34a;
+}
+
+/* Games grid */
+.game-list {
+    max-width: 1000px;
+    margin: 35px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Game card */
+.game-card {
+    background: #1e293b;
+    padding: 22px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.game-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.game-card p {
+    margin: 8px 0;
+    color: #cbd5e1;
+}
+
+/* Buttons inside cards */
+.game-card button {
+    margin-top: 15px;
+    margin-right: 8px;
+}
+
+.game-card button:first-of-type {
+    background: #ef4444;
+    color: white;
+}
+
+.game-card button:last-of-type {
+    background: #3b82f6;
+    color: white;
+}
+
+/* Edit form */
+.game-card div[ng-if] {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #475569;
+}
+
+.game-card div[ng-if] input,
+.game-card div[ng-if] select {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.game-card div[ng-if] button:first-of-type {
+    background: #22c55e;
+}
+
+.game-card div[ng-if] button:last-of-type {
+    background: #64748b;
+}
