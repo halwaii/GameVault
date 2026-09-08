@@ -61,6 +61,36 @@
 
             <!-- ng-repeat gives $index to each game-->
             <button ng-click="deleteGame($index)">Delete</button>
+            <!-- button to edit-->
+            <button ng-click="editGame(game)">Edit</button>
+
+            <!-- editing form -->
+             <div ng-if="editingGame === game">
+
+            <input type="text"
+               ng-model="game.name"
+               placeholder="Game name">
+
+            <input type="text"
+               ng-model="game.genre"
+               placeholder="Genre">
+
+            <select ng-model="game.status">
+            <option value="Playing">Playing</option>
+            <option value="Completed">Completed</option>
+            <option value="Wishlist">Wishlist</option>
+            </select>
+
+            <input type="number"
+               ng-model="game.rating"
+               min="0"
+               max="10"
+               placeholder="Rating">
+
+            <button ng-click="saveGame()">Save</button>
+            <button ng-click="cancelEdit()">Cancel</button>
+
+            </div>
             </div>
         </div>
         <script src="app.js"></script>

@@ -41,11 +41,20 @@ app.controller("Gamecontroller",function($scope){
         rating: $scope.newGame.rating
     });
     $scope.newGame = {};
-
+    };
     // function to delete game of that index
     $scope.deleteGame = function(index) {
         // remove 1 element from given index
     $scope.games.splice(index, 1);
-};
-}
+    };
+
+    $scope.editGame = function(game){
+        $scope.editingGame = game;
+    };
+    $scope.saveGame = function(){
+        $scope.editingGame = null;
+    };
+    $scope.cancelEdit = function(){
+        $scope.editingGame = null;
+    };
 });
