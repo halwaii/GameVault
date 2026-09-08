@@ -19,7 +19,47 @@
     -->
     <body ng-controller="Gamecontroller">
         <h1>GameVault</h1>
+        <div class="add-game">
+            <!-- ng.model -> two way data binding-->
+            <input
+                type="text"
+                placeholder="game name"
+
+                ng-model="newGame.name">
+            
+            <input
+                type="text"
+                placeholder="genre"
+                ng-model="newGame.genre">
+
+            <select ng-model="newGame.status">
+                <option value="playing">playing</option>
+                <option value="completed">completed</option>
+                <option value="wishlist">wishlist</option>
+            </select>
+
+            <input
+                type="number"
+                placeholder="rating"
+                ng-model="newGame.rating">
+
+            <button ng-click="addGame()">Add Game</button>
+        </div>
         <h2>{{message}}</h2>
+        <div class="game-list">
+
+            <!-- create html element  for each array element of games-->
+            <!-- games = [game1, game2, game3]-->
+            <!-- making div for every game-->
+            <div class="game-card" ng-repeat="game in games">
+
+            <h3>{{game.name}}</h3>
+
+            <p>Genre: {{game.genre}}</p>
+            <p>Status: {{game.status}}</p>
+            <p>⭐ : {{game.rating}}</p>
+            </div>
+        </div>
         <script src="app.js"></script>
     </body>
 </html>
